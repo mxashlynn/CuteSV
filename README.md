@@ -6,6 +6,9 @@ Instead, it is built expressly for the needs of the Parquet library and associat
 
 You probably don't want to use this in non-Parquet projects.
 
+For more details see the [format specification](https://github.com/mxashlynn/CuteSV/Documentation/SPEC.md).
+
+
 ## Version 0.1 Warning
 This project is incomplete and not yet ready for use.
 
@@ -14,14 +17,16 @@ This project is incomplete and not yet ready for use.
 The solution contains several related projects.
 Each C# namespace gets its own folder.
 
-- **Documentation**
-    - How to use the library.
 - **CuteSVLibrary**
     - The serialization solution itself.
 - **CuteSVRunner**
     - A simple smoke test for CuteSV.
 - **CuteSVUnitTests**
     - Unit tests for CuteSV.
+- **Documentation**
+    - How to use the library.
+- **ExampleData**
+    - Test CSV files.
 
 # Requirements
 
