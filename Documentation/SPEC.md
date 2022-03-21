@@ -80,17 +80,17 @@ In particular:
 
 Much of this specification may be expressed using Augmented Backus-Naur Form in the following way:
 
-File = Header LF *(Record LF)
+File = Header LF \*(Record LF)
 
-Header = NonEscapedField *(COMMA NonEscapedField)
+Header = NonEscapedField \*(COMMA NonEscapedField)
 
-Record = Field *(COMMA Field)
+Record = Field \*(COMMA Field)
 
 Field = (EscapedField / NonEscapedField)
 
-NonEscapedField = *(TextData / DQUOTE)
+NonEscapedField = \*(TextData / DQUOTE)
 
-EscapedField = DQUOTE *(TextData / COMMA / 2DQUOTE) DQUOTE
+EscapedField = DQUOTE \*(TextData / COMMA / 2DQUOTE) DQUOTE
 
 TextData = CHAR *excluding* COMMA, LF, or DQUOTE.
 
