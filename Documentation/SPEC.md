@@ -98,11 +98,11 @@ Aside from naming conventions and the rule about the number of Records per Grid,
 > 
 > Field = (EscapedField / NonEscapedField)
 > 
-> NonEscapedField = \*(TextData / DQUOTE)
+> NonEscapedField = \*(TextData / COLON / DQUOTE)
 > 
-> EscapedField = DQUOTE \*(TextData / COMMA / 2DQUOTE) DQUOTE
+> EscapedField = DQUOTE \*(TextData / COMMA / COLON / 2DQUOTE) DQUOTE
 > 
-> TextData = VCHAR *excluding* COMMA, LF, or DQUOTE.
+> TextData = VCHAR *excluding* COMMA, COLON, LF, or DQUOTE.
 > 
 > COMMA = %d44
 > 
