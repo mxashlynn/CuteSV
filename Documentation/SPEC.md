@@ -47,13 +47,13 @@ Two file subtypes are recognized:
     - More specifically, the key-value pair is of the form `[Internal ID Name]:[Internal ID]`.
     - For example, `ModelID:110000`.
     - Note that the delimiter used by this key-value pair is a single colon character (ASCII 58, Unicode U+003A `:`).
-- The Header is followed by one or more Grid Collections.
-- Each Grid Collection begins with a Subheader.
+- The Header is followed by one or more Grids.
+- Each Grid begins with a Subheader.
     - Like the Header proper, only the first Field of a Subheader is populated, containing the internal name of the collected data.
     - For example, `ParquetStatuses` names a grid of ParquetStatus objects.
-- Each Grid Collection is concluded by a set of Records.
-    - There are precisely as many Records per Grid Collection as there are Fields in the Header, so that all Grid Collections represent square arrays of data.
-    - Because the size of each Grid Collection is known in advance, no termination marker is required.
+- Each Grid is concluded by a set of Records.
+    - There are precisely as many Records per Grid as there are Fields in the Header, so that all Grid Collections represent square arrays of data.
+    - Because the size of each Grid is known in advance, no termination marker is required.
 - The file ends at the conclusion of the last Grid Collection.
 
 ## Notes On Compatibility
@@ -78,13 +78,23 @@ In particular:
 
 ## Formal Grammar
 
-Much of this specification may be expressed using Augmented Backus-Naur Form in the following way:
+Aside from naming conventions and the rule about the number of Records per Grid, this specification may be expressed using Augmented Backus-Naur Form in the following way:
 
-> File = Header LF \*(Record LF)
+> File = (ListFile / ObjectFile)
+> 
+> ListFile = Header LF \*(Record LF)
+> 
+> ObjectFile = KVPHeader LF \*Grid
 > 
 > Header = NonEscapedField \*(COMMA NonEscapedField)
 > 
+> KVPHeader = TextData COLON TextData \*COMMA
+> 
 > Record = Field \*(COMMA Field)
+> 
+> Grid = Subheader LF \*(Record LF)
+> 
+> Subheader = NonEscapedField \*COMMA
 > 
 > Field = (EscapedField / NonEscapedField)
 > 
