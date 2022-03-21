@@ -80,27 +80,27 @@ In particular:
 
 Much of this specification may be expressed using Augmented Backus-Naur Form in the following way:
 
-File = Header LF \*(Record LF)
-
-Header = NonEscapedField \*(COMMA NonEscapedField)
-
-Record = Field \*(COMMA Field)
-
-Field = (EscapedField / NonEscapedField)
-
-NonEscapedField = \*(TextData / DQUOTE)
-
-EscapedField = DQUOTE \*(TextData / COMMA / 2DQUOTE) DQUOTE
-
-TextData = CHAR *excluding* COMMA, LF, or DQUOTE.
-
-COMMA = `,`
-
-DQUOTE =  `"`
-
-LF = `\n`
-
-CHAR = Any printable Extended ASCII character (or, equiavelently, any printable UTF-8 character from the Basic Multilingual Plane Blocks 1 or 2 U+0000 to U+00FF).
+> File = Header LF \*(Record LF)
+> 
+> Header = NonEscapedField \*(COMMA NonEscapedField)
+> 
+> Record = Field \*(COMMA Field)
+> 
+> Field = (EscapedField / NonEscapedField)
+> 
+> NonEscapedField = \*(TextData / DQUOTE)
+> 
+> EscapedField = DQUOTE \*(TextData / COMMA / 2DQUOTE) DQUOTE
+> 
+> TextData = CHAR *excluding* COMMA, LF, or DQUOTE.
+> 
+> COMMA = `,`
+> 
+> DQUOTE =  `"`
+> 
+> LF = `\n`
+> 
+> CHAR = Any printable Extended ASCII character (or, equiavelently, any printable UTF-8 character from the Basic Multilingual Plane Blocks 1 or 2 U+0000 to U+00FF).
 
 ## Formal Dialect
 
