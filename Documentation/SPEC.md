@@ -92,15 +92,17 @@ Much of this specification may be expressed using Augmented Backus-Naur Form in 
 > 
 > EscapedField = DQUOTE \*(TextData / COMMA / 2DQUOTE) DQUOTE
 > 
-> TextData = CHAR *excluding* COMMA, LF, or DQUOTE.
+> TextData = VCHAR *excluding* COMMA, LF, or DQUOTE.
 > 
-> COMMA = `,`
+> COMMA = %d44
 > 
-> DQUOTE =  `"`
+> COLON = %d58
 > 
-> LF = `\n`
+> DQUOTE =  %d34
 > 
-> CHAR = Any printable Extended ASCII character (or, equiavelently, any printable UTF-8 character from the Basic Multilingual Plane Blocks 1 or 2 U+0000 to U+00FF).
+> LF = %d10
+> 
+> VCHAR = Any printable Extended ASCII character (or, equiavelently, any printable UTF-8 character from the Basic Multilingual Plane Blocks 1 or 2 U+0000 to U+00FF).
 
 ## Formal Dialect
 
