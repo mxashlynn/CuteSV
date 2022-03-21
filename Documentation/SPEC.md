@@ -75,6 +75,23 @@ In particular:
 4. <a id="Note4"></a>Unlike most CSV readers, CuteSV specifies the names of the files it reads and writes. [↑](#Ref4)
 5. <a id="Note4"></a>Only the object type name and internal ID are used when looking up a file of subtype 2.  If more than one file name begins with these strings, the first such file found is used. [↑](#Ref3)
 
+## Formal Grammar
+
+This specification may be expressed using Augmented Backus-Naur Form in the following way:
+
+    File = Header LF *(Record LF)
+    Header = Field *(COMMA Field)
+    Record = Field *(COMMA Field)
+    Field = (EscapedField / NonEscapedField)
+    EscapedField = DQUOTE *(ESCAPEDTEXTDATA / COMMA / 2DQUOTE) DQUOTE
+    NonEscapedField = *TEXTDATA
+    TEXTDATA = EncodedText *excluding* COMMA or LF.
+    ESCAPEDTEXTDATA = EncodedText *excluding* COMMA, LF, or DQUOTE.
+    COMMA = `,`
+    DQUOTE =  `"`
+    LF = `\n`
+    EncodedText = Any printable ASCII or ASCII Extended character (or, equiavelently, and printable UTF-8 character from the Basic Multilingual Plane Blocks 1 or 2 U+0000 to U+00FF).
+
 ## Formal Dialect
 
 Much of this specification can be summarized in the following [CSV Dialect](https://specs.frictionlessdata.io//csv-dialect/) JSON object.
@@ -92,31 +109,3 @@ Much of this specification can be summarized in the following [CSV Dialect](http
     "commentChar":
   }
 }```
-
-## Formal Grammar
-
-CuteSV's grammar may be expressed using Augmented Backus-Naur Form in the following way:
-
-File = Header LF *(Record LF)
-
-Header = Field *(COMMA Field)
-
-Record = Field *(COMMA Field)
-
-Field = (EscapedField / NonEscapedField)
-
-EscapedField = DQUOTE *(ESCAPEDTEXTDATA / COMMA / 2DQUOTE) DQUOTE
-
-NonEscapedField = *TEXTDATA
-
-TEXTDATA = EncodedText *excluding* COMMA or LF.
-
-ESCAPEDTEXTDATA = EncodedText *excluding* COMMA, LF, or DQUOTE.
-
-COMMA = `,`
-
-DQUOTE =  `"`
-
-LF = `\n`
-
-EncodedText = Any printable ASCII or ASCII Extended character (or, equiavelently, and printable UTF-8 character from the Basic Multilingual Plane Blocks 1 or 2 U+0000 to U+00FF).
