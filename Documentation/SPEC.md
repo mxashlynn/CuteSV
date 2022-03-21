@@ -9,7 +9,7 @@ Here are the assumptions CuteSV makes about the files it reads and writes.
 
 Two file subtypes are recognized:
 1. Those whose records represent a list of objects, each a distinct instance of the same type of object.
-2. Those whose records represent the definition of a single object, an expression of a whole, possibly complex data set.
+2. Those whose records represent of a single complex object, typically including data that depends on a specific 2D layout.
 
 ### For All Files
 
@@ -18,16 +18,17 @@ Two file subtypes are recognized:
 - Every file ends with a terminal linefeed. <a id="Ref2"></a><sup>[2](#Note2)</sup>
     - For this reason, every record always ends in a line break.
 - The Header and each Record contain exactly the same number of Fields.
-- White space at the beginning and end of the Header or any Record is ignored.
+    - However, Fields in a Header are never escaped.
+- Whitespace leading or trailing the Header or any Record is ignored.
 - Records are delimited by a single linefeed character (ASCII 10, Unicode U+000A `\n`).
     - The last record in a file is always followed by a linefeed.
     - Line breaks are not permitted within records.
 - Fields within the Header and within Records are delimited by a single comma character (ASCII 44, Unicode U+002C `,`).
     - Commas are permitted within a Field only if that Field is escaped.
-- White space at the beginning and end of any Field is ignored.<a id="Ref3"></a><sup>[3](#Note3)</sup>
+- Whitespace leading or trailing any Field is ignored.<a id="Ref3"></a><sup>[3](#Note3)</sup>
     - Leading and trailing whitespace is preserved in a Field only if that Field is escaped.
 - Fields are escaped by enclosing their entire contents in double-quotation-marks (ASCII 34, Unicode U+0022 `"`).
-    - Double quotation marks within an escaped field must themselves be escaped by duplication; that is, by preceding each double quote with another double quote.
+    - Double-quotation-marks within an escaped field must themselves be escaped by duplication; that is, by preceding each double quote with another double quote.
 
 ### For File Subtype 1, Lists of Objects
 
@@ -47,9 +48,9 @@ Two file subtypes are recognized:
     - For example, `ModelID:110000`.
     - Note that the delimiter used by this key-value pair is a single colon character (ASCII 58, Unicode U+003A `:`).
 - The Header is followed by one or more Grid Collections.
-- Each Grid Collection begins with a Sub-Header.
-    - Like the Header proper, only the first Field of a Sub-Header is populated, containing the internal name of the collected data.
-    - For example, `ParquetStatuses` for a grid of ParquetStatus objects.
+- Each Grid Collection begins with a Subheader.
+    - Like the Header proper, only the first Field of a Subheader is populated, containing the internal name of the collected data.
+    - For example, `ParquetStatuses` names a grid of ParquetStatus objects.
 - Each Grid Collection is concluded by a set of Records.
     - There are precisely as many Records per Grid Collection as there are Fields in the Header, so that all Grid Collections represent square arrays of data.
     - Because the size of each Grid Collection is known in advance, no termination marker is required.
@@ -77,20 +78,20 @@ In particular:
 
 ## Formal Grammar
 
-This specification may be expressed using Augmented Backus-Naur Form in the following way:
+Much of this specification may be expressed using Augmented Backus-Naur Form in the following way:
 
-    File = Header LF *(Record LF)
-    Header = Field *(COMMA Field)
-    Record = Field *(COMMA Field)
-    Field = (EscapedField / NonEscapedField)
-    EscapedField = DQUOTE *(ESCAPEDTEXTDATA / COMMA / 2DQUOTE) DQUOTE
-    NonEscapedField = *TEXTDATA
-    TEXTDATA = EncodedText *excluding* COMMA or LF.
-    ESCAPEDTEXTDATA = EncodedText *excluding* COMMA, LF, or DQUOTE.
-    COMMA = `,`
-    DQUOTE =  `"`
-    LF = `\n`
-    EncodedText = Any printable ASCII or ASCII Extended character (or, equiavelently, and printable UTF-8 character from the Basic Multilingual Plane Blocks 1 or 2 U+0000 to U+00FF).
+File = Header LF *(Record LF)
+Header = NonEscapedField *(COMMA NonEscapedField)
+Record = Field *(COMMA Field)
+Field = (EscapedField / NonEscapedField)
+NonEscapedField = *NonEscapedTextData
+EscapedField = DQUOTE *(EscapedTextData / COMMA / 2DQUOTE) DQUOTE
+NonEscapedTextData = CHAR *excluding* COMMA or LF.
+EscapedTextData = CHAR *excluding* COMMA, LF, or DQUOTE.
+COMMA = `,`
+DQUOTE =  `"`
+LF = `\n`
+CHAR = Any printable Extended ASCII character (or, equiavelently, and printable UTF-8 character from the Basic Multilingual Plane Blocks 1 or 2 U+0000 to U+00FF).
 
 ## Formal Dialect
 
