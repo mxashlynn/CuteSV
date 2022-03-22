@@ -1,0 +1,3 @@
+CuteSV.AssemblyInfo
+CuteSV.AssemblyInfo.AssemblyInfo() -> void
+static readonly CuteSV.AssemblyInfo.LibraryVersion -> string
