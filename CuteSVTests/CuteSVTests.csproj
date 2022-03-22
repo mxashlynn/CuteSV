@@ -63,4 +63,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CuteSVClassLibrary\CuteSVClassLibrary.csproj" />
+  </ItemGroup>
+
 </Project>
