@@ -15,14 +15,13 @@ Two file subtypes are recognized:
 
 - Every file begins with a Header. <a id="Ref1"></a><sup>[1](#Note1)</sup>
     - There is only one Header per file.
-- Every file ends with a terminal linefeed. <a id="Ref2"></a><sup>[2](#Note2)</sup>
-    - For this reason, every record always ends in a line break.
+- Every file ends with a terminal linefeed character  (ASCII 10, Unicode U+000A `\n`). <a id="Ref2"></a><sup>[2](#Note2)</sup>
 - The Header and each Record contain exactly the same number of Fields.
     - However, Fields in a Header are never escaped.
 - Whitespace leading or trailing the Header or any Record is ignored.
-- Records are delimited by a single linefeed character (ASCII 10, Unicode U+000A `\n`).
-    - The last record in a file is always followed by a linefeed.
-    - Line breaks are not permitted within records.
+- Records are delimited by a single linefeed character.
+    - The last Record in a file is always followed by a linefeed.
+    - Linefeeds are never permitted within Records.
 - Fields within the Header and within Records are delimited by a single comma character (ASCII 44, Unicode U+002C `,`).
     - Commas are permitted within a Field only if that Field is escaped.
 - Whitespace leading or trailing any Field is ignored.<a id="Ref3"></a><sup>[3](#Note3)</sup>
@@ -54,7 +53,7 @@ Two file subtypes are recognized:
 - Each Grid is concluded by a set of Records.
     - There are precisely as many Records per Grid as there are Fields in the Header, so that all Grid Collections represent square arrays of data.
     - Because the size of each Grid is known in advance, no termination marker is required.
-- The file ends at the conclusion of the last Grid Collection.
+- The file ends at the conclusion of the last Grid.
 
 ## Notes On Compatibility
 
