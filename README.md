@@ -6,7 +6,7 @@ Instead, it is built expressly for the needs of the Parquet library and associat
 
 You probably don't want to use this in non-Parquet projects.
 
-For more details see the [format specification](https://github.com/mxashlynn/CuteSV/Documentation/SPEC.md).
+For more details see the [format specification](https://github.com/mxashlynn/CuteSV/blob/main/Documentation/SPEC.md).
 
 
 ## Version 0.1 Warning
