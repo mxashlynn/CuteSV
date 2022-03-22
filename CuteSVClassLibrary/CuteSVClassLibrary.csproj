@@ -33,6 +33,9 @@
     <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
     <NoWarn>CS1701;CS1702;CS0809</NoWarn>
     <WarningsAsErrors>NU1605;CS1591</WarningsAsErrors>
+    <WarningLevel>5</WarningLevel>
+    <AnalysisLevel>latest</AnalysisLevel>
+    <Nullable>warnings</Nullable>
     <EnableNETAnalyzers>true</EnableNETAnalyzers>
     <AnalysisMode>AllEnabledByDefault</AnalysisMode>
     <EnforceCodeStyleInBuild>False</EnforceCodeStyleInBuild>
@@ -45,9 +48,6 @@
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <CopyLocalLockFileAssemblies>True</CopyLocalLockFileAssemblies>
     <Configurations>Debug;Release</Configurations>
-    <AnalysisLevel>latest</AnalysisLevel>
-    <WarningLevel>5</WarningLevel>
-    <Nullable>warnings</Nullable>
     <ImplicitUsings>disable</ImplicitUsings>
     <ErrorReport>send</ErrorReport>
   </PropertyGroup>
