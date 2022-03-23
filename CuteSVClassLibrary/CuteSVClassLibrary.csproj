@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
@@ -15,8 +15,8 @@
     <Company>Girl Potion</Company>
     <Description>A simplistic CSV reader/writer for use by Parquet.</Description>
     <Copyright>2018-2022 Paige Ashlynn</Copyright>
-    <ApplicationIcon><!-- ParquetIcon.ico --></ApplicationIcon>
-    <PackageIcon><!-- Parquet Logo Large.png --></PackageIcon>
+    <ApplicationIcon>CuteSVIcon.ico</ApplicationIcon>
+    <PackageIcon>CuteSVLogo.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <PackageProjectUrl>http://parquet.gay/</PackageProjectUrl>
@@ -74,10 +74,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <!-- None Include="Properties\CuteSV Logo Large.png">
+    <None Include="Properties\CuteSVLogo.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
-    </None -->
+    </None>
     <None Include="..\README.md">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
@@ -86,10 +86,10 @@
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
-    <!-- None Include="Properties\CuteSVIcon.ico">
+    <None Include="Properties\CuteSVIcon.ico">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
-    </None -->
+    </None>
   </ItemGroup>
 
 </Project>
