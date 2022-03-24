@@ -15,8 +15,8 @@
     <Company>Girl Potion</Company>
     <Description>A simple smoke test routine.</Description>
     <Copyright>2018-2022 Paige Ashlynn</Copyright>
-    <ApplicationIcon><!-- ParquetIcon.ico --></ApplicationIcon>
-    <PackageIcon><!-- Parquet Logo Large.png --></PackageIcon>
+    <ApplicationIcon>CuteSVIcon.ico</ApplicationIcon>
+    <PackageIcon>CuteSVLogo.png</PackageIcon>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <PackageProjectUrl>http://parquet.gay/</PackageProjectUrl>
     <RepositoryUrl>https://github.com/mxashlynn/CuteSV</RepositoryUrl>
@@ -66,7 +66,19 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="Properties\CuteSVLogo.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
     <None Include="..\LICENSE.txt">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="Properties\CuteSVIcon.ico">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
