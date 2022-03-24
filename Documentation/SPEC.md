@@ -9,7 +9,7 @@ Here are the assumptions CuteSV makes about the files it reads and writes.
 
 Two file subtypes are recognized:
 1. Those whose records represent a list of objects, each a distinct instance of the same type of object.
-2. Those whose records represent of a single complex object, typically including data that depends on a specific 2D layout.
+2. Those whose records represent a single complex object, typically including data that depends on a specific 2D layout.
 
 ### For All Files
 
