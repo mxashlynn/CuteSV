@@ -65,4 +65,4 @@ Once initial design and implementation are complete this file may not be updated
 
 39. The entire set of Parquet ExampleData can be successfully deserialized.
 40. The entire set of Parquet ExampleData can be successfully serialized.
-    - No data on disc is changed when tests 39 and 40 are performed in sequence.
+    - No data on disc is changed when tests 39 and 40 are performed in sequence and also in isolation from other operations.  In other words, serialization and deserialization do not themselves alter data.
