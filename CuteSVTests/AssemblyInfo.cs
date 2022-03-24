@@ -6,15 +6,15 @@ using Xunit;
 // Make no promises to maintain internal services.
 [assembly: ComVisible(false)]
 
-// ParquetUnitTests are API consumers, not API providers.
+// Tests are API consumers, not API providers.
 [assembly: CLSCompliant(false)]
 
-namespace CuteSVUnitTests
+namespace CuteSVTests
 {
     /// <summary>
-    /// Unit tests <see cref="AssemblyInfo"/>.
+    /// Tests <see cref="AssemblyInfo"/>.
     /// </summary>
-    public class AssemblyInfoUnitTest
+    public class AssemblyInfoTests
     {
         #region Values for Tests
         /// <summary>This is the canonical invalid library version string used in serialization tests.</summary>

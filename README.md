@@ -21,8 +21,8 @@ Each C# namespace gets its own folder.
     - The serialization solution itself.
 - **CuteSVRunner**
     - A simple smoke test for CuteSV.
-- **CuteSVUnitTests**
-    - Unit tests for CuteSV.
+- **CuteSVTests**
+    - Specification tests for CuteSV.
 - **Documentation**
     - How to use the library.
 - **ExampleData**

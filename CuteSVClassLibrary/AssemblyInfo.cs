@@ -9,8 +9,8 @@ using System.Runtime.InteropServices;
 // Show warnings on CLS-noncompliant statements to better support .NET languages other than C#.
 [assembly: CLSCompliant(true)]
 
-// Allow unit tests to access classes and members with internal accessibility.
-[assembly: InternalsVisibleTo("CuteSVUnitTests")]
+// Allow tests to access classes and members with internal accessibility.
+[assembly: InternalsVisibleTo("CuteSVTests")]
 
 namespace CuteSV
 {

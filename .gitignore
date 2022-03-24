@@ -90,10 +90,6 @@ Icons?
 *.exe
 *.iap
 *.unitypackage
-ParquetClassLibrary/Parquet.xml
-ParquetClassLibrary/Parquet.Documentation.xml
-ParquetRunner/ParquetRunner.Documentation.xml
-ParquetUnitTests/ParquetUnitTests.Documentation.xml
 
 # ================== #
 # Paige Stuff #
