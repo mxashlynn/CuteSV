@@ -47,9 +47,11 @@ Two file subtypes are recognized:
     - For example, `ModelID:110000`.
     - Note that the delimiter used by this key-value pair is a single colon character (ASCII 58, Unicode U+003A `:`).
 - The Header is followed by one or more Grids.
+    - The number of Fields in the Header dictates the number of Records to expect per Grid.  Because all Fields after the first are empty in the Header, `N` commas indicates that each Grid contains `N + 1` Records.
 - Each Grid begins with a Subheader.
     - Like the Header proper, only the first Field of a Subheader is populated, containing the internal name of the collected data.
     - For example, `ParquetStatuses` names a grid of ParquetStatus objects.
+    - Like the Header proper, the first Field is followed by `N` commas if the Grid contains `N + 1` Records.
 - Each Grid is concluded by a set of Records.
     - There are precisely as many Records per Grid as there are Fields in the Header, so that all Grid Collections represent square arrays of data.
     - Because the size of each Grid is known in advance, no termination marker is required.
@@ -71,7 +73,7 @@ In particular:
 
 1. <a id="Note1"></a>If a CSV file does not begin with a Header, CuteSV will not be able to interpret it. [↑](#Ref1)
 2. <a id="Note2"></a>If a CSV file does not end in a linefeed, one will be appended. [↑](#Ref2)
-3. <a id="Note3"></a>CuteSV always outputs linefeeds but will accept linefeed-carriage return pairs. [↑](#Ref3)
+3. <a id="Note3"></a>CuteSV always outputs linefeeds but will accept Carriage Return-Linefeed pairs. [↑](#Ref3)
 4. <a id="Note4"></a>Any whitespace ignored when reading is not preserved when writing. [↑](#Ref4)
 5. <a id="Note5"></a>Unlike most CSV readers, CuteSV specifies the names of the files it reads and writes. [↑](#Ref5)
 6. <a id="Note6"></a>Only the object type name and internal ID are used when looking up a file of subtype 2.  If more than one file name begins with these strings, the first such file found is used. [↑](#Ref6)
