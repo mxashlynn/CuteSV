@@ -1,5 +1,5 @@
 # CuteSV
-A simplistic C# serialization library for [Parquet](https://github.com/mxashlynn/Parquet).
+A simplistic CSV serialization library for [Parquet](https://github.com/mxashlynn/Parquet).
 
 This is not a robust or general-purpose CSV solution.
 Instead, it is built expressly for the needs of the Parquet library and associated tools.
