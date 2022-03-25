@@ -15,7 +15,7 @@
     <Company>Girl Potion</Company>
     <Description>A simple smoke test routine.</Description>
     <Copyright>2018-2022 Paige Ashlynn</Copyright>
-    <ApplicationIcon>CuteSVIcon.ico</ApplicationIcon>
+    <ApplicationIcon>Properties/CuteSVIcon.ico</ApplicationIcon>
     <PackageIcon>CuteSVLogo.png</PackageIcon>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <PackageProjectUrl>http://parquet.gay/</PackageProjectUrl>
@@ -37,8 +37,8 @@
     <WarningLevel>5</WarningLevel>
     <Nullable>warnings</Nullable>
     <EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
-    <RootNamespace>ParquetRunner</RootNamespace>
-    <StartupObject>ParquetRunner.RunnerProgram</StartupObject>
+    <RootNamespace>CuteSVRunner</RootNamespace>
+    <StartupObject>CuteSVRunner.RunnerProgram</StartupObject>
 
     <IsPackable>False</IsPackable>
     <GeneratePackageOnBuild>False</GeneratePackageOnBuild>

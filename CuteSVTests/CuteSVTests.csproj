@@ -15,11 +15,11 @@
     <Company>Girl Potion</Company>
     <Description>Specification tests for CuteSV.</Description>
     <Copyright>2018-2022 Paige Ashlynn</Copyright>
-    <ApplicationIcon>CuteSVIcon.ico</ApplicationIcon>
+    <ApplicationIcon>Properties/CuteSVIcon.ico</ApplicationIcon>
     <PackageIcon>CuteSVLogo.png</PackageIcon>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <PackageProjectUrl>http://parquet.gay/</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/mxashlynn/Parquet</RepositoryUrl>
+    <RepositoryUrl>https://github.com/mxashlynn/CuteSV</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags></PackageTags>
     <PackageReleaseNotes>This code is not meant for external use.</PackageReleaseNotes>
