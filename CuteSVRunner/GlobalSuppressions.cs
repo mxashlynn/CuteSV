@@ -6,5 +6,9 @@
 using System.Diagnostics.CodeAnalysis;
 
 [assembly: SuppressMessage("Globalization", "CA1303:Do not pass literals as localized parameters",
-                           Justification = "Not needed for a simple smoke test.", Scope = "member",
-                           Target = "~M:CuteSVRunner.RunnerProgram.Main")]
+                           Justification = "Not needed for a simple smoke test.", Scope = "namespaceanddescendants",
+                           Target = "~N:CuteSVRunner")]
+
+[assembly: SuppressMessage("Performance", "CA1814:Prefer jagged arrays over multidimensional",
+                           Justification = "Parquet requires rectangular arrays.", Scope = "namespaceanddescendants",
+                           Target = "~N:CuteSVRunner")]

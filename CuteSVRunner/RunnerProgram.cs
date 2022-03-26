@@ -8,7 +8,7 @@ namespace CuteSVRunner
     /// </summary>
     internal static class RunnerProgram
     {
-        #region Test Objects
+        #region Test Collections
         /// <summary>A container for simple test objects.</summary>
         private static IList<object> SimpleObjects = new List<object>();
 
@@ -17,17 +17,21 @@ namespace CuteSVRunner
         #endregion
 
         #region Test Routines
+        /// <summary>How many <see cref="TestSimpleClass"/>es to create.</summary>
+        private const int SimpleListLength = 12;
+
         /// <summary>
         /// Attempts to load a series of simple objects from a single file.
         /// </summary>
         /// <returns><c>true</c> if the objects were successfully deserialized; <c>false</c> otherwise.</returns>
         private static bool TryLoadCollections()
         {
-            SimpleObjects.Add(1);
-            SimpleObjects.Add(2);
-            SimpleObjects.Add(3);
+            for (var i = 0; i < SimpleListLength; i++)
+            {
+                SimpleObjects.Add(new TestSimpleClass(i, $"Test Object {i}", "A simple object to test."));
+            }
 
-            return SimpleObjects.Count > 0;
+            return SimpleObjects.Count == SimpleListLength;
         }
 
         /// <summary>
@@ -36,9 +40,7 @@ namespace CuteSVRunner
         /// <returns><c>true</c> if the objects were successfully deserialized; <c>false</c> otherwise.</returns>
         private static bool TryLoadComplexObjects()
         {
-            ComplexObjects.Add(1);
-            ComplexObjects.Add(2);
-            ComplexObjects.Add(3);
+            ComplexObjects.Add(new TestComplexClass());
 
             return ComplexObjects.Count > 0;
         }
@@ -49,9 +51,7 @@ namespace CuteSVRunner
         /// <returns><c>true</c> if the objects were successfully serialized; <c>false</c> otherwise.</returns>
         private static bool TrySaveComplexObjects()
         {
-            ComplexObjects.Remove(1);
-            ComplexObjects.Remove(2);
-            ComplexObjects.Remove(3);
+            ComplexObjects.RemoveAt(0);
 
             return ComplexObjects.Count == 0;
         }
@@ -62,9 +62,10 @@ namespace CuteSVRunner
         /// <returns><c>true</c> if the objects were successfully serialized; <c>false</c> otherwise.</returns>
         private static bool TrySaveCollections()
         {
-            SimpleObjects.Remove(1);
-            SimpleObjects.Remove(2);
-            SimpleObjects.Remove(3);
+            for (var i = 0; i < SimpleListLength; i++)
+            {
+                SimpleObjects.RemoveAt(0);
+            }
 
             return SimpleObjects.Count == 0;
         }
