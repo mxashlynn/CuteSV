@@ -98,7 +98,7 @@ Aside from naming conventions and the rule about the number of Records per Grid,
 > 
 > Subheader = NonEscapedField \*COMMA
 > 
-> Field = (EscapedField / NonEscapedField)
+> Field = (NonEscapedField / EscapedField)
 > 
 > NonEscapedField = \*(TextData / COLON / DQUOTE)
 > 
