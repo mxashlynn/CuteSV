@@ -50,11 +50,7 @@ namespace CuteSVRunner
         /// </summary>
         /// <returns><c>true</c> if the objects were successfully serialized; <c>false</c> otherwise.</returns>
         private static bool TrySaveComplexObjects()
-        {
-            ComplexObjects.RemoveAt(0);
-
-            return ComplexObjects.Count == 0;
-        }
+            => CuteSV.Save(ComplexObjects[0]);
 
         /// <summary>
         /// Attempts to save a series of simple objects to a single file.
@@ -62,12 +58,14 @@ namespace CuteSVRunner
         /// <returns><c>true</c> if the objects were successfully serialized; <c>false</c> otherwise.</returns>
         private static bool TrySaveCollections()
         {
+            var result = true;
+
             for (var i = 0; i < SimpleListLength; i++)
             {
-                SimpleObjects.RemoveAt(0);
+                result |= CuteSV.Save(SimpleObjects[i]);
             }
 
-            return SimpleObjects.Count == 0;
+            return result;
         }
         #endregion
 
