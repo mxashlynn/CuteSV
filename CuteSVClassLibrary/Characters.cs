@@ -9,40 +9,40 @@ namespace CuteSV
         // TODO Replace these casted ints with \u literals.
 
         /// An ASCII horizontal tab.
-        internal const char HorizontalTab = (char)9;
+        internal const char HorizontalTab = '\u0009';
 
         /// An ASCII linefeed.
-        internal const char LineFeed = (char)10;
+        internal const char LineFeed = '\u000A';
 
         /// An ASCII vertical tab.
-        internal const char VerticalTab = (char)11;
+        internal const char VerticalTab = '\u000B';
 
         /// An ASCII carriage return.
-        internal const char CarriageReturn = (char)13;
+        internal const char CarriageReturn = '\u000D';
 
         /// The highest value in the lower range of ASCII control characters.
-        internal const char EndControlRange = (char)31;
+        internal const char EndControlRange = '\u001F';
 
         /// An ASCII breaking space.
-        internal const char Space = (char)32;
+        internal const char Space = '\u0020';
 
         /// An ASCII double quotation mark.
-        internal const char DoubleQuote = (char)34;
+        internal const char DoubleQuote = '\u0022';
 
         /// An ASCII comma.
-        internal const char Comma = (char)44;
+        internal const char Comma = '\u002C';
 
         /// An ASCII colon.
-        internal const char Colon = (char)58;
+        internal const char Colon = '\u003A';
 
         /// An ASCII delete.
-        internal const char Delete = (char)127;
+        internal const char Delete = '\u007F';
 
         /// An ASCII non-breaking space.
-        internal const char NonBreakingSpace = (char)255;
+        internal const char NonBreakingSpace = '\u00FF';
 
         /// The lowest value outside the range of ASCII extended characters.
-        internal const char EndExtendedRange = (char)256;
+        internal const char EndExtendedRange = '\u0100';
         #endregion
 
         #region Validation Routines
