@@ -1,3 +1,10 @@
+const CuteSV.Delimiters.EscapedEscapedFieldDelimiter = "\"\"" -> string
+const CuteSV.Delimiters.EscapedFieldDelimiter = "\"" -> string
+const CuteSV.Delimiters.FieldDelimiter = "," -> string
+const CuteSV.Delimiters.KeyValuePairDelimiter = ":" -> string
+const CuteSV.Delimiters.RecordDelimiter = "\n" -> string
 CuteSV.AssemblyInfo
 CuteSV.AssemblyInfo.AssemblyInfo() -> void
+CuteSV.CSV
+CuteSV.Delimiters
 static readonly CuteSV.AssemblyInfo.LibraryVersion -> string
