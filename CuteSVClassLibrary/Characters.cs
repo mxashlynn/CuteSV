@@ -67,19 +67,6 @@ namespace CuteSV
             || (character > EndControlRange && character < Comma)
             || (character > Comma && character < Delete)
             || (character > Delete && character < EndExtendedRange);
-
-        /// <summary>
-        /// Determines if the given <see cref="char"/> is allowed within escaped texted data.
-        /// </summary>
-        /// <param name="character">The character to inspect.</param>
-        /// <returns><c>true</c> if the given character conforms to the grammar, <c>false</c> otherwise.</returns>
-        internal static bool IsValidEscapedTextData(char character)
-            => character == HorizontalTab
-            || (character > EndControlRange && character < Comma)
-            || (character > Comma && character < Delete)
-            || (character > Delete && character < EndExtendedRange);
-            // TODO: This is wrong since it must evaluate double quotes in context of other double quotes.
-
         #endregion
     }
 }
